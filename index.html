@@ -11,6 +11,7 @@
       text-align: center;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -74,14 +75,26 @@
       from { opacity: 0; transform: scale(0.5); }
       to { opacity: 1; transform: scale(1); }
     }
+
+    /* 🌸 Pétalos cayendo */
+    .petalo {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: caer 8s linear infinite;
+    }
+
+    @keyframes caer {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
   </style>
 </head>
 <body>
   <h1>🌹 Para ti, con todo mi cariño 🌹</h1>
   <p>Quise dejarte este detalle que nunca se marchita 💕</p>
   
-  <img src="https://i.pinimg.com/564x/23/b3/cc/23b3cc4c97a6adfb7cb2b1fcbe9cb1f8.jpg" alt="Pareja anime">
-
+ <img src="foto.png" alt="Nuestra foto" class="foto">
   <div class="mensaje">
     Desde que llegaste a mi vida, todo es más bonito. Tu sonrisa ilumina mis días, y tu cariño me llena el corazón.  
     Este pequeño espacio es para recordarte cuánto significas para mí 💓
@@ -90,13 +103,25 @@
   <button class="btn" onclick="mostrarFlores()">Haz clic para recibir un regalo 💐</button>
 
   <div class="flores" id="flores">
-    <img src="https://i.imgur.com/6X4Qh9U.png" alt="Ramo de flores" width="300">
+    <img src="https://i.pinimg.com/originals/35/43/4f/35434f4ff55bcd40db1a7c1686c9a9e0.png" alt="Ramo de flores" width="300">
     <p>Un ramo de flores solo para ti 🌸🌹💐</p>
   </div>
 
   <script>
     function mostrarFlores() {
       document.getElementById('flores').style.display = 'block';
+
+      // Crear pétalos 🌸
+      for (let i = 0; i < 15; i++) {
+        let petalo = document.createElement("div");
+        petalo.classList.add("petalo");
+        petalo.innerHTML = "🌸";
+        petalo.style.left = Math.random() * window.innerWidth + "px";
+        petalo.style.animationDuration = (5 + Math.random() * 5) + "s";
+        document.body.appendChild(petalo);
+
+        setTimeout(() => { petalo.remove(); }, 10000);
+      }
     }
   </script>
 </body>
