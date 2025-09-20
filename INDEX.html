@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Ti 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.3em;
+      max-width: 600px;
+      line-height: 1.6;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background-color: #ff4b5c;
+      color: white;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .heart {
+      font-size: 2em;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ Para esa persona especial ✨</h1>
+  <p>
+    Este pequeño rincón digital es solo para recordarte lo increíble que eres 💕  
+    Gracias por estar en mi vida y hacer mis días más bonitos.  
+  </p>
+  <div class="heart">❤️</div>
+  <button onclick="mostrarMensaje()">Haz clic aquí</button>
+  
+  <p id="mensajeSecreto" style="display:none; margin-top:20px; font-size:1.5em; font-weight:bold;">
+    🌸 Eres alguien que merece todo lo bueno del mundo 🌸
+  </p>
+
+  <script>
+    function mostrarMensaje() {
+      document.getElementById("mensajeSecreto").style.display = "block";
+    }
+  </script>
+</body>
+</html>
