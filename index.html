@@ -67,7 +67,7 @@
 
     .flores {
       display: none;
-      margin-top: 30px;
+      margin-top: 20px;
       animation: aparecer 2s ease-in-out;
     }
 
@@ -76,46 +76,8 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* 🎨 Flor */
-    .flor {
-      display: inline-block;
-      position: relative;
-      width: 80px;
-      height: 80px;
-      margin: 10px;
-    }
-
-    .petalo {
-      position: absolute;
-      width: 30px;
-      height: 50px;
-      background: pink;
-      border-radius: 50%;
-      top: 15px;
-      left: 25px;
-      transform-origin: bottom center;
-    }
-
-    .petalo:nth-child(1) { transform: rotate(0deg); }
-    .petalo:nth-child(2) { transform: rotate(60deg); }
-    .petalo:nth-child(3) { transform: rotate(120deg); }
-    .petalo:nth-child(4) { transform: rotate(180deg); }
-    .petalo:nth-child(5) { transform: rotate(240deg); }
-    .petalo:nth-child(6) { transform: rotate(300deg); }
-
-    .centro {
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      width: 20px;
-      height: 20px;
-      background: yellow;
-      border-radius: 50%;
-      z-index: 2;
-    }
-
     /* 🌸 Pétalos cayendo */
-    .caer {
+    .petalo {
       position: fixed;
       top: -50px;
       font-size: 24px;
@@ -131,61 +93,29 @@
 <body>
   <h1>🌹 Para ti, con todo mi cariño 🌹</h1>
   <p>Quise dejarte este detalle que nunca se marchita 💕</p>
-  
+
   <img src="foto.png" alt="Nuestra foto" class="foto">
-  
+
   <div class="mensaje">
-    Desde que llegaste a mi vida, todo es más bonito. Tu sonrisa ilumina mis días, y tu cariño me llena el corazón.  
+    Desde que llegaste a mi vida, todo es más bonito.  
+    Tu sonrisa ilumina mis días, y tu cariño me llena el corazón.  
     Este pequeño espacio es para recordarte cuánto significas para mí 💓
   </div>
 
   <button class="btn" onclick="mostrarFlores()">Eres mi persona favorita 💐</button>
 
   <div class="flores" id="flores">
-    <div class="flor">
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="centro"></div>
-    </div>
-
-    <div class="flor">
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="centro"></div>
-    </div>
-
-    <div class="flor">
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="petalo"></div>
-      <div class="centro"></div>
-    </div>
-
-    <p>Un ramo de flores solo para ti 🌸🌼💐</p>
+    <img src="https://i.pinimg.com/originals/35/43/4f/35434f4ff55bcd40db1a7c1686c9a9e0.png" alt="Ramo de flores" width="300">
+    <p>Un ramo de flores solo para ti 🌸🌹💐</p>
   </div>
 
   <script>
     function mostrarFlores() {
       document.getElementById('flores').style.display = 'block';
 
-      // Crear pétalos cayendo 🌸
+      // Crear pétalos 🌸
       for (let i = 0; i < 15; i++) {
         let petalo = document.createElement("div");
-        petalo.classList.add("caer");
+        petalo.classList.add("petalo");
         petalo.innerHTML = "🌸";
-        petalo.style.left = Math.random() * window.innerWidth + "px";
-        petalo.style.animationDuration = (5 + Math.random() * 5) + "s";
-        document.body.appendChild(petalo);
-
-        setTimeo
+        petalo.style.left =
