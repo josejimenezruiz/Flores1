@@ -2,84 +2,68 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Para Mi Persona Favorita</title>
+  <title>Para ti 💖</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      color: #fff;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff5f7);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
-      overflow-x: hidden;
+      padding: 40px;
+      color: #444;
     }
-
     h1 {
-      margin-top: 40px;
-      font-size: 2.5em;
-      color: #fff;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      color: #d63384;
+      font-size: 40px;
+      margin-bottom: 10px;
     }
-
     p {
-      font-size: 1.3em;
-      margin: 15px auto;
-      max-width: 600px;
-      line-height: 1.6;
+      font-size: 20px;
+      margin: 15px 0;
     }
-
-    img {
-      margin: 30px auto;
-      max-width: 80%;
-      border-radius: 20px;
-      box-shadow: 0px 6px 16px rgba(0,0,0,0.4);
+    .foto {
+      width: 280px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      margin: 20px 0;
     }
-
-    .hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: -1;
+    .flores {
+      width: 180px;
+      margin-top: 20px;
+      animation: float 3s ease-in-out infinite;
     }
-
-    .heart {
-      position: absolute;
-      bottom: -50px;
-      color: rgba(255,255,255,0.8);
-      font-size: 24px;
-      animation: floatUp 6s linear infinite;
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
     }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    .mensaje {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-top: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 500px;
     }
   </style>
 </head>
 <body>
-  <h1>💖 Para la mujer que amo 💖</h1>
-  <p>
-    No hay palabras suficientes para describir lo que siento por ti.<br>
-    Eres mi alegría, mi paz y mi motivación de cada día.<br>
-    Quiero que nunca lo olvides... <strong>eres mi persona favorita</strong> ❤️.
-  </p>
+  <h1>🌹 Para ti, con todo mi cariño 🌹</h1>
+  <p>Quise dejarte este detalle que nunca se marchita 💕</p>
+  
+  <!-- Tu foto -->
+  <img src="foto.png" alt="Nuestra foto" class="foto">
 
-  <img src="foto.png" alt="Nuestra foto">
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio en HTML5.
-  </audio>
+  <!-- Imagen ramo de flores -->
+  <div>
+    <img src="https://i.imgur.com/OyHhlL9.png" alt="Ramo de flores" class="flores">
+  </div>
 
-  <div class="hearts">
-    <div class="heart" style="left:10%;">❤️</div>
-    <div class="heart" style="left:30%;">💖</div>
-    <div class="heart" style="left:50%;">💕</div>
-    <div class="heart" style="left:70%;">💘</div>
-    <div class="heart" style="left:90%;">💞</div>
+  <!-- Mensaje especial -->
+  <div class="mensaje">
+    <p>Desde que llegaste a mi vida, todo es más bonito.  
+    Tu sonrisa ilumina mis días, y tu cariño me llena el corazón.  
+    Este pequeño espacio es para recordarte cuánto significas para mí 💖</p>
   </div>
 </body>
 </html>
