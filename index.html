@@ -3,84 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para Ti 💖</title>
+  <title>Foto Especial</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-      color: #fff;
-      text-align: center;
-      min-height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
     }
-
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    p {
-      font-size: 1.3em;
-      max-width: 600px;
-      line-height: 1.6;
-      animation: fadeIn 3s ease-in-out;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 12px 25px;
-      border: none;
+    .card {
+      background: #fff;
+      padding: 20px;
       border-radius: 25px;
-      background-color: #ff4b5c;
-      color: white;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      max-width: 400px;
+      position: relative;
+      z-index: 2;
+      border: 3px solid #ff7eb9;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      border: 2px solid #ff85a1;
+    }
+    .card h2 {
+      margin: 0;
+      font-size: 1.8em;
+      color: #d6336c;
+    }
+    .card p {
       font-size: 1.1em;
-      cursor: pointer;
-      transition: transform 0.2s ease;
+      color: #444;
     }
 
-    button:hover {
-      transform: scale(1.1);
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
+    /* Corazones animados */
     .heart {
-      font-size: 2em;
-      animation: beat 1s infinite;
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 20px;
+      animation: floatUp 6s infinite;
+      opacity: 0.8;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
     }
 
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+    /* Flores decorativas */
+    .flower {
+      position: absolute;
+      font-size: 25px;
+      animation: spin 10s linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <h1>✨ Para esa persona especial ✨</h1>
-  <p>
-    Este pequeño rincón digital es solo para recordarte lo increíble que eres 💕  
-    Gracias por estar en mi vida y hacer mis días más bonitos.  
-  </p>
-  <div class="heart">❤️</div>
-  <button onclick="mostrarMensaje()">Haz clic aquí</button>
-  
-  <p id="mensajeSecreto" style="display:none; margin-top:20px; font-size:1.5em; font-weight:bold;">
-    🌸 Eres alguien que merece todo lo bueno del mundo 🌸
-  </p>
+  <div class="card">
+    <img src="https://drive.google.com/uc?export=view&id=1_TkvwnByHS2wZMDgAodwLZ5yPe--63Ft" alt="Foto especial">
+    <h2>💖 Nuestro recuerdo 💖</h2>
+    <p>Una foto que siempre tendrá un lugar en el corazón 🌹✨</p>
+  </div>
 
-  <script>
-    function mostrarMensaje() {
-      document.getElementById("mensajeSecreto").style.display = "block";
-    }
-  </script>
+  <!-- Corazones flotando -->
+  <div class="heart" style="left:10%;">❤️</div>
+  <div class="heart" style="left:30%; animation-delay:2s;">💖</div>
+  <div class="heart" style="left:50%; animation-delay:4s;">💕</div>
+  <div class="heart" style="left:70%; animation-delay:1s;">💘</div>
+  <div class="heart" style="left:90%; animation-delay:3s;">💓</div>
+
+  <!-- Flores decorativas -->
+  <div class="flower" style="top:5%; left:5%;">🌸</div>
+  <div class="flower" style="top:10%; right:10%;">🌹</div>
+  <div class="flower" style="bottom:5%; left:15%;">🌼</div>
+  <div class="flower" style="bottom:10%; right:20%;">🌷</div>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio en HTML5.
+  </audio>
 </body>
 </html>
