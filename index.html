@@ -2,48 +2,77 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Para ti 💖</title>
   <style>
     body {
-      background: linear-gradient(to bottom right, #ffe6f0, #fff5f7);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Arial', sans-serif;
+      background-color: #ffe4ec;
       text-align: center;
-      padding: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #e91e63;
+      margin-top: 40px;
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1.2em;
       color: #444;
     }
-    h1 {
-      color: #d63384;
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 20px;
-      margin: 15px 0;
-    }
-    .foto {
-      width: 280px;
+
+    img {
+      margin: 20px auto;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      max-width: 300px;
     }
-    .flores {
-      width: 180px;
-      margin-top: 20px;
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
-    }
+
     .mensaje {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
+      background: white;
       display: inline-block;
-      margin-top: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       max-width: 500px;
+      animation: fadeIn 2s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: linear-gradient(45deg, #ff4b2b, #ff416c);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    }
+
+    .flores {
+      display: none;
+      margin-top: 20px;
+      animation: aparecer 2s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.5); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -51,19 +80,24 @@
   <h1>🌹 Para ti, con todo mi cariño 🌹</h1>
   <p>Quise dejarte este detalle que nunca se marchita 💕</p>
   
-  <!-- Tu foto -->
-  <img src="foto.png" alt="Nuestra foto" class="foto">
+  <img src="https://i.pinimg.com/564x/23/b3/cc/23b3cc4c97a6adfb7cb2b1fcbe9cb1f8.jpg" alt="Pareja anime">
 
-  <!-- Imagen ramo de flores -->
-  <div>
-    <img src="https://i.imgur.com/OyHhlL9.png" alt="Ramo de flores" class="flores">
-  </div>
-
-  <!-- Mensaje especial -->
   <div class="mensaje">
-    <p>Desde que llegaste a mi vida, todo es más bonito.  
-    Tu sonrisa ilumina mis días, y tu cariño me llena el corazón.  
-    Este pequeño espacio es para recordarte cuánto significas para mí 💖</p>
+    Desde que llegaste a mi vida, todo es más bonito. Tu sonrisa ilumina mis días, y tu cariño me llena el corazón.  
+    Este pequeño espacio es para recordarte cuánto significas para mí 💓
   </div>
+
+  <button class="btn" onclick="mostrarFlores()">Haz clic para recibir un regalo 💐</button>
+
+  <div class="flores" id="flores">
+    <img src="https://i.imgur.com/6X4Qh9U.png" alt="Ramo de flores" width="300">
+    <p>Un ramo de flores solo para ti 🌸🌹💐</p>
+  </div>
+
+  <script>
+    function mostrarFlores() {
+      document.getElementById('flores').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
